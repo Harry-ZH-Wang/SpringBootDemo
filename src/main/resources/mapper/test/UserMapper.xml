@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wzh.demo.mapper.UserMapper">
+
+
+	<resultMap type="UserBean" id="user">
+		<id property="id" column="id" />
+		<result property="name" column="u_name" javaType="String" />
+		<result property="sex" column="u_sex" javaType="String" />
+		<result property="age" column="u_age" javaType="java.lang.Long" />
+	</resultMap>
+
+	<select id="selectUserByName" resultMap="user" parameterType="UserBean">
+		select t.u_id,t.u_name,t.u_sex,t.u_age from t_user t where t.u_name =
+		#{name}
+
+	</select>
+
+</mapper>
