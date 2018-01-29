@@ -15,11 +15,14 @@ import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.support.SpringBootServletInitializer;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
+
 /**
  * Spring Boot 应用启动类,这里继承SpringBootServletInitializer并重写SpringApplicationBuilder方法
  * 是为了打包为war进行外部tomcat的部署
  */
 @SpringBootApplication // Spring Boot 应用的标识
+@EnableTransactionManagement // 启动注解事务，等同于传统Spring 项目中xml配置<tx:annotation-driven />
 @ComponentScan(basePackages = { "com.wzh"}) // 指定spring管理路径，就是那些bean 注解的路径
 @MapperScan({ "com.wzh.**.mapper" }) // mapper 接口类扫描包配置，两个*为目录通配符
 public class Application extends SpringBootServletInitializer{
@@ -55,8 +58,7 @@ public class Application extends SpringBootServletInitializer{
 		PathMatchingResourcePatternResolver resolver = new PathMatchingResourcePatternResolver();
 
 		// 两个*为目录通配符
-		sqlSessionFactoryBean.setMapperLocations(resolver
-				.getResources("classpath:/mapper/**/*.xml"));
+		sqlSessionFactoryBean.setMapperLocations(resolver.getResources("classpath:/mapper/**/*.xml"));
 
 		//指定扫描别名包的路径，多个bean的扫描路径，拼接以分号隔开
 		String typeAliasesPackage = "com.wzh.demo.domain;";
