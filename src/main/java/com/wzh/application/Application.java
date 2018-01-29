@@ -22,7 +22,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
  * 是为了打包为war进行外部tomcat的部署
  */
 @SpringBootApplication // Spring Boot 应用的标识
-@EnableTransactionManagement // 启动注解事务，等同于传统Spring 项目中xml配置<tx:annotation-driven />
+@EnableTransactionManagement // 启动注解事务 等同于传统Spring 项目中xml配置<tx:annotation-driven />
 @ComponentScan(basePackages = { "com.wzh"}) // 指定spring管理路径，就是那些bean 注解的路径
 @MapperScan({ "com.wzh.**.mapper" }) // mapper 接口类扫描包配置，两个*为目录通配符
 public class Application extends SpringBootServletInitializer{
