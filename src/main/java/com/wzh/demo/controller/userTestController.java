@@ -21,14 +21,14 @@ public class userTestController {
 	@Qualifier(value="userService")
 	private IUserService userServiceImpl;
 	
-	@RequestMapping("/userInfo")
+	@RequestMapping("/userInfo.do")
 	public String showUserInfoByName(HttpServletRequest requset,HttpServletResponse response,Model mode)
 	{
 		
 		//这里名字写死，然后只取一个，方便测试
 		UserBean user = userServiceImpl.selectUserByName("张三").get(0);
-		mode.addAttribute("user", user);
-		
+		mode.addAttribute("user",user);
+
 		return "/test/userInfo";
 		
 	}

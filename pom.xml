@@ -54,11 +54,18 @@
             <artifactId>spring-boot-starter-jdbc</artifactId>
         </dependency>
 
-        <!-- oracle驱动 因为maven不支持oracle的jar管理，这里我导入的是本地仓的，具体maven配置支持可以百度 -->
+        <!-- oracle驱动 因为maven不支持oracle的jar管理，这里我导入的是本地仓的，具体maven配置支持可以百度
         <dependency>
             <groupId>com.oracle</groupId>
             <artifactId>ojdbc6</artifactId>
             <version>12.1.0.2.0</version>
+        </dependency>
+        -->
+        <!--mysql数据库驱动 -->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>5.1.38</version>
         </dependency>
 
         <!-- mybatis -->
