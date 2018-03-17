@@ -12,7 +12,7 @@ import com.wzh.demo.mapper.UserMapper;
 
 @Repository("userDao")
 public class UserDaoImpl implements UserDao{
-	
+
 	@Resource
 	private UserMapper userMapper;
 
@@ -20,6 +20,11 @@ public class UserDaoImpl implements UserDao{
 	public List<UserBean> selectUserByName(String name) {
 		
 		return userMapper.selectUserByName(name);
+	}
+
+	@Override
+	public int addUser(UserBean user) {
+		return userMapper.addUser(user);
 	}
 
 }

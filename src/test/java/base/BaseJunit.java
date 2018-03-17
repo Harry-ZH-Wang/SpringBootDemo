@@ -1,3 +1,5 @@
+package base;
+
 import com.wzh.application.Application;
 import org.junit.Ignore;
 import org.junit.Test;

@@ -8,4 +8,11 @@ public interface IUserService {
 	
 	public List<UserBean> selectUserByName(String name);
 
+	/**
+	 * 添加用户信息
+	 * @param user
+	 * @return
+	 */
+	public int addUser(UserBean user);
+
 }
