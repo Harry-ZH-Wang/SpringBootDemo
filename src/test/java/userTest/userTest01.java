@@ -31,10 +31,10 @@ public class userTest01 extends BaseJunit{
     public void testAddUser()
     {
         UserBean bean = new UserBean();
-        bean.setName("注解事务测试");
+        bean.setName("编程事务测试");
         bean.setSex("男");
         bean.setAge(33L);
-        int i = userService.addUser(bean);
+        int i = userService.addUserByProgramming(bean);
         Assert.assertSame(2,i);
 
     }

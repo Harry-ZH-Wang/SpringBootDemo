@@ -15,4 +15,11 @@ public interface IUserService {
 	 */
 	public int addUser(UserBean user);
 
+	/**
+	 *
+	 * @param user
+	 * @return
+	 */
+	public int addUserByProgramming(UserBean user);
+
 }
