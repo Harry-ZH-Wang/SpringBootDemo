@@ -11,11 +11,17 @@ import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.tomcat.jdbc.pool.DataSource;
 import org.mybatis.spring.SqlSessionFactoryBean;
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
+import org.springframework.core.task.AsyncTaskExecutor;
 import org.springframework.jdbc.datasource.DataSourceTransactionManager;
+import org.springframework.scheduling.annotation.EnableAsync;
+import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.support.SpringBootServletInitializer;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
+
+import java.util.concurrent.RejectedExecutionHandler;
+import java.util.concurrent.ThreadPoolExecutor;
 
 /**
  * Spring Boot 应用启动类,这里继承SpringBootServletInitializer并重写SpringApplicationBuilder方法
@@ -23,6 +29,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
  */
 @SpringBootApplication // Spring Boot 应用的标识
 @EnableTransactionManagement // 启动注解事务 等同于传统Spring 项目中xml配置<tx:annotation-driven />
+@EnableAsync //异步调用
 @ComponentScan(basePackages = { "com.wzh"}) // 指定spring管理路径，就是那些bean 注解的路径
 @MapperScan({ "com.wzh.**.mapper" }) // mapper 接口类扫描包配置，两个*为目录通配符
 public class Application extends SpringBootServletInitializer{
@@ -70,6 +77,34 @@ public class Application extends SpringBootServletInitializer{
 	// 创建事物管理器
 	@Bean
 	public PlatformTransactionManager transactionManager() {
+
 		return new DataSourceTransactionManager(dataSource());
+	}
+
+	//自定义线程池，当配置多个executor时，被@Async("id")指定使用；也被作为线程名的前缀
+	@Bean
+	public AsyncTaskExecutor taskExecutor()
+	{
+		ThreadPoolTaskExecutor executor = new ThreadPoolTaskExecutor();
+
+		//线程池名字
+		executor.setThreadNamePrefix("asyncExecutor");
+		//最大线程数
+		executor.setMaxPoolSize(50);
+		//最小线程数
+		executor.setCorePoolSize(3);
+
+		// 使用预定义的异常处理类
+		executor.setRejectedExecutionHandler(new ThreadPoolExecutor.CallerRunsPolicy());
+
+
+		// 自定义拒绝策略
+		/*executor.setRejectedExecutionHandler(new RejectedExecutionHandler() {
+			@Override
+			public void rejectedExecution(Runnable r, ThreadPoolExecutor executor) {
+				//........
+			}
+		});*/
+		return executor;
 	}
 }

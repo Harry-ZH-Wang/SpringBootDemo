@@ -1,5 +1,3 @@
-package userTest;
-
 import base.BaseJunit;
 import com.wzh.demo.dao.UserDao;
 import com.wzh.demo.domain.UserBean;
@@ -8,7 +6,6 @@ import org.junit.Assert;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
-
 
 
 /**
