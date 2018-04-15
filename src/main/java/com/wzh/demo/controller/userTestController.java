@@ -32,4 +32,11 @@ public class userTestController {
 		return "/test/userInfo";
 		
 	}
+
+	@RequestMapping("/img.do")
+	public String showImg(Model model)
+	{
+		model.addAttribute("imgName","test.png");
+		return "/test/img";
+	}
 }
