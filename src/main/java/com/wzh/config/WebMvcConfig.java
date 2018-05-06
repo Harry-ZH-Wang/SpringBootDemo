@@ -19,13 +19,13 @@ public class WebMvcConfig extends WebMvcConfigurerAdapter {
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
         //将所有/webStatic/** 访问都映射到classpath:/webStatic/ 目录下
-        registry.addResourceHandler("/webStatic/**").addResourceLocations("classpath:/webStatic/");
+        //registry.addResourceHandler("/webStatic/**").addResourceLocations("classpath:/webStatic/");
 
         //将所有/img/**访问路径映射到img1,img2,img这个文件夹实际是不存在的，这里只是做个路径映射
-        registry.addResourceHandler("/img/**").addResourceLocations("classpath:/img1/","classpath:/img2/");
+        //registry.addResourceHandler("/img/**").addResourceLocations("classpath:/img1/","classpath:/img2/");
 
         //将所有/album1/**,/album2/**访问路径映射到img3,album这个文件夹实际是不存在的，这里只是做个路径映射
-        registry.addResourceHandler("/album1/**","/album2/**").addResourceLocations("classpath:/img3/");
+        //registry.addResourceHandler("/album1/**","/album2/**").addResourceLocations("classpath:/img3/");
 
     }
 
