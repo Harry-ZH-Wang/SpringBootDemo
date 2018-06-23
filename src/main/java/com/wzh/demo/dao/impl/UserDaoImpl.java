@@ -27,4 +27,18 @@ public class UserDaoImpl implements UserDao{
 		return userMapper.addUser(user);
 	}
 
+	@Override
+	public String test() {
+		return userMapper.test();
+	}
+
+	@Override
+	public List<UserBean> selectTestList() {
+		return userMapper.selectTestList();
+	}
+
+	@Override
+	public UserBean selectTest() {
+		return userMapper.selectTest();
+	}
 }

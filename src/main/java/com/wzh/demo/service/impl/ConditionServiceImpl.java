@@ -1,6 +1,6 @@
 package com.wzh.demo.service.impl;
 
-import com.wzh.config.Computer;
+import com.wzh.demo.conditionDemo.Computer;
 import com.wzh.demo.service.ConditionService;
 import org.springframework.context.ApplicationContext;
 import org.springframework.stereotype.Service;

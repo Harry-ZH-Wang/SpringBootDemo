@@ -22,4 +22,20 @@ public interface UserMapper {
 	 */
 	public int addUser(@Param("user") UserBean user);
 
+	/**
+	 * 测试连接使用
+	 * @param
+	 * @return
+	 */
+	public String test();
+
+	/**
+	 * 测试连接使用
+	 * @param
+	 * @return
+	 */
+	public List<UserBean> selectTestList();
+
+	public UserBean selectTest();
+
 }

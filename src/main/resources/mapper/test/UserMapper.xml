@@ -17,4 +17,12 @@
 	<insert id="addUser" parameterType="UserBean">
 		insert into t_user (u_name,u_sex,u_age) values (#{user.name},#{user.sex},#{user.age})
 	</insert>
+	<select id="selectTestList" resultMap="user" >
+			select t.id,t.u_name,t.u_sex,t.u_age from t_test t
+	</select>
+
+	<select id="selectTest" resultMap="user" >
+		select t.id,t.u_name,t.u_sex,t.u_age from t_test t
+	</select>
+
 </mapper>

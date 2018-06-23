@@ -68,7 +68,7 @@ public class Application extends SpringBootServletInitializer{
 		sqlSessionFactoryBean.setMapperLocations(resolver.getResources("classpath:/mapper/**/*.xml"));
 
 		//指定扫描别名包的路径，多个bean的扫描路径，拼接以分号隔开
-		String typeAliasesPackage = "com.wzh.demo.domain;";
+		String typeAliasesPackage = "com.wzh.demo.domain;com.wzh.config.framework.domain";
 	
 		sqlSessionFactoryBean.setTypeAliasesPackage(typeAliasesPackage);
 		return sqlSessionFactoryBean.getObject();

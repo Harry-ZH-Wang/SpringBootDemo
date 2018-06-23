@@ -1,7 +1,5 @@
-package com.wzh.config;
+package com.wzh.demo.conditionDemo;
 
-import com.wzh.config.condition.SysMacCondition;
-import com.wzh.config.condition.SysWinCondition;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Conditional;
 import org.springframework.context.annotation.Configuration;

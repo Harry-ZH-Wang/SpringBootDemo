@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wzh.config.framework.mapper.FrameworkInitMapper">
+
+    <resultMap type="ftpBean" id="ftpBean">
+        <result property="ftpName" column="ftp_name" javaType="String" />
+        <result property="ftpHost" column="ftp_host" javaType="String" />
+        <result property="ftpPort" column="ftp_port" javaType="String" />
+        <result property="ftpUserName" column="ftp_username" javaType="String" />
+        <result property="ftpPassword" column="ftp_password" javaType="String" />
+        <result property="ftpFolder" column="ftp_folder" javaType="String" />
+    </resultMap>
+
+    <select id="initFtpInfo" resultMap="ftpBean">
+          select tf.ftp_name,
+               tf.ftp_host,
+               tf.ftp_port,
+               tf.ftp_username,
+               tf.ftp_password,
+               tf.ftp_folder
+          from t_framework_ftp tf
+    </select>
+
+</mapper>

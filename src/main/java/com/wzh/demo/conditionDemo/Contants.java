@@ -1,4 +1,4 @@
-package com.wzh.config;
+package com.wzh.demo.conditionDemo;
 
 public class Contants {
 

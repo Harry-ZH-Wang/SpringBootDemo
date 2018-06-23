@@ -19,4 +19,15 @@ public interface UserDao {
 	 * @return
 	 */
 	public int addUser(UserBean user);
+
+	/**
+	 * 测试连接使用
+	 * @param
+	 * @return
+	 */
+	public String test();
+
+	public List<UserBean> selectTestList();
+
+	public UserBean selectTest();
 }

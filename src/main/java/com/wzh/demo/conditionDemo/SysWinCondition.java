@@ -1,6 +1,5 @@
-package com.wzh.config.condition;
+package com.wzh.demo.conditionDemo;
 
-import com.wzh.config.Contants;
 import org.springframework.context.annotation.Condition;
 import org.springframework.context.annotation.ConditionContext;
 import org.springframework.core.env.Environment;
@@ -20,6 +19,7 @@ public class SysWinCondition implements Condition{
 
         Contants.system = env.getProperty("os.name");
         //return true;
-        return env.getProperty("os.name").contains("Windows");
+        System.out.println(env.getProperty("os.name"));
+        return env.getProperty("os.name").contains("Mac OS X");
     }
 }

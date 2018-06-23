@@ -1,6 +1,5 @@
-package com.wzh.config.condition;
+package com.wzh.demo.conditionDemo;
 
-import com.wzh.config.Contants;
 import org.springframework.context.annotation.Condition;
 import org.springframework.context.annotation.ConditionContext;
 import org.springframework.core.env.Environment;
