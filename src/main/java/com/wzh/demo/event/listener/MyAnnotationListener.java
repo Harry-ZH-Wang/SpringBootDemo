@@ -21,11 +21,11 @@ public class MyAnnotationListener {
     @Async
     public void listener2(MyEvent event)
     {
-        try {
-            Thread.sleep(3000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+//        try {
+//            Thread.sleep(3000);
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();
+//        }
         System.out.println("注解事件监听-1："+ event.getMsg());
     }
 }

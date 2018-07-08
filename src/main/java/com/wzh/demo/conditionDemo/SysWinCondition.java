@@ -20,6 +20,6 @@ public class SysWinCondition implements Condition{
         Contants.system = env.getProperty("os.name");
         //return true;
         System.out.println(env.getProperty("os.name"));
-        return env.getProperty("os.name").contains("Mac OS X");
+        return env.getProperty("os.name").contains("window");
     }
 }

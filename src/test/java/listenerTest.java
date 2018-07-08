@@ -1,5 +1,6 @@
 import base.BaseJunit;
 import com.wzh.demo.service.ListenerTestService;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -13,7 +14,7 @@ public class listenerTest extends BaseJunit {
     @Qualifier(value = "listenerService")
     private ListenerTestService listenerTestService;
 
-    @Test
+    @Ignore
     public void testEvent()
     {
         listenerTestService.publish("测试监听");

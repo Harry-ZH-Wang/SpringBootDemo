@@ -23,7 +23,7 @@ public class ftpTest extends BaseJunit {
     @Qualifier(value = "ftpManagerUtils")
     private FtpManagerUtils ftpManagerUtils;
 
-    @Test
+    @Ignore
     public void readTextTest()
     {
 

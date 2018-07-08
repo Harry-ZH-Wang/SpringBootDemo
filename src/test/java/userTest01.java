@@ -31,7 +31,7 @@ public class userTest01 extends BaseJunit{
     private InitFrameWorkConstantService initFrameWorkConstantService;
 
 
-    @Test
+    @Ignore
     public void testBean()
     {
         UserBean bean = userDao.selectTest();

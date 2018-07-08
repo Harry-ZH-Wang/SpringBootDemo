@@ -20,7 +20,7 @@ import org.springframework.test.context.web.WebAppConfiguration;
 @WebAppConfiguration
 public class BaseJunit {
 
-    @Ignore
+    @Test
     public void runJunitTest()
     {
         System.out.println("Junit 启动测试");
