@@ -19,6 +19,7 @@ import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.support.SpringBootServletInitializer;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
+import org.springframework.web.socket.server.standard.ServerEndpointExporter;
 
 import java.util.concurrent.RejectedExecutionHandler;
 import java.util.concurrent.ThreadPoolExecutor;
@@ -38,6 +39,7 @@ public class Application extends SpringBootServletInitializer{
 	public static void main(String[] args) {
 		// 启动嵌入式的 Tomcat 并初始化 Spring 环境及其各 Spring 组件
 		SpringApplication.run(Application.class, args);
+
 	}
 
 	@Override
@@ -106,5 +108,11 @@ public class Application extends SpringBootServletInitializer{
 			}
 		});*/
 		return executor;
+	}
+
+	// websocket配置
+	@Bean
+	public ServerEndpointExporter serverEndpointExporter() {
+		return new ServerEndpointExporter();
 	}
 }

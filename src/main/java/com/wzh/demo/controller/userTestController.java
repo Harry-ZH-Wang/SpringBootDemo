@@ -4,6 +4,8 @@ package com.wzh.demo.controller;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.wzh.config.utils.BeanHeader;
+import com.wzh.demo.service.SystemOutService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
@@ -33,9 +35,18 @@ public class userTestController {
 	}
 
 	@RequestMapping("/img.do")
-	public String showImg(Model model)
+	public String showImg(HttpServletRequest request,Model model)
 	{
+		request.getSession();
 		model.addAttribute("imgName","test.png");
 		return "/test/img";
+	}
+
+	@RequestMapping("/sysout.do")
+	public String sysout(HttpServletRequest request,Model model)
+	{
+		SystemOutService service = BeanHeader.getBean("systemOutService");
+		service.sysout();
+		return "";
 	}
 }

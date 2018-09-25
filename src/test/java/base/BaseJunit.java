@@ -14,10 +14,10 @@ import org.springframework.test.context.web.WebAppConfiguration;
  */
 //SpringJUnit支持，由此引入Spring-Test框架支持！
 @RunWith(SpringJUnit4ClassRunner.class)
-//启动类
-@SpringBootTest(classes = Application.class)
-//web项目支持
-@WebAppConfiguration
+//启动类,启用随即端口
+@SpringBootTest(classes = Application.class,webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
+//web项目支持，webEnvironment属性使用后不能用webAppconfiguration注解
+//@WebAppConfiguration
 public class BaseJunit {
 
     @Test
