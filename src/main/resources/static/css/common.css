@@ -1,0 +1,28 @@
+/*
+ * Copyright 2010-2015 jinx.kim. All rights reserved.
+ * Support: http://www.jinx.kim
+ * 
+ * Cascading Style Sheets - Common
+ * Version: 3.0
+ */
+table.table-bordered td.center {
+	text-align: center;
+	vertical-align: inherit;
+}
+
+table.table-bordered td.center-left {
+	text-align: left;
+	vertical-align: inherit;
+}
+
+table.table-bordered td hr {
+	margin: 5px 0;
+}
+
+div.rahmen {
+	background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    display: inline-block;
+    padding: 4px;
+}

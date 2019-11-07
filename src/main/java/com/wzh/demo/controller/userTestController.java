@@ -49,4 +49,11 @@ public class userTestController {
 		service.sysout();
 		return "";
 	}
+
+	@RequestMapping("/login.do")
+	public String login(HttpServletRequest request,Model model)
+	{
+
+		return "/test/login";
+	}
 }
